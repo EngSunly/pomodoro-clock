@@ -8,6 +8,7 @@ import { clear } from '@testing-library/user-event/dist/clear';
 // when break reaches 00:00, switch to work
 // when timer reaches 00:00, play sound
 // when break reaches 00:00, play sound
+// you can custom the break and work length
 function PomodoroClock() {
   const [breakLength, setBreakLength] = useState(5);
   const [workLength, setWorkLength] = useState(25);
