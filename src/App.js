@@ -38,7 +38,7 @@ function PomodoroClock() {
       startTimer();
     }
   }
-  
+
   function startTimer() {
     setIsRunning(true);
   }
@@ -52,6 +52,7 @@ function PomodoroClock() {
       setMinutes(breakLength);
       setSeconds("00");
       console.log("switching to break");
+      updateref();
       setIsRunning(false);
       setMode("break");
     } else {
@@ -76,8 +77,8 @@ function PomodoroClock() {
           switchmodeRef.current();
           return;
         }
-        minutesRef.current--;
-        secondsRef.current = 59;
+          minutesRef.current--;
+          secondsRef.current = 59;
       } else {
         secondsRef.current--;
       }
@@ -155,7 +156,7 @@ function PomodoroClock() {
       </div>
 
 
-      <div id="timer-label">Session</div>
+      <div id="timer-label">Current Clock = {mode === "work"? "Work":"Break" }</div>
       <div id="time-left">{minutes}:{seconds}</div>
       <button onClick={handleStartPause}
         id="start_stop">Start/Stop</button>
